@@ -37,12 +37,15 @@ const App = () => {
 
 
         let commentDate = `${year}-${month}-${day}  ${hour}:${minutes}:${seconds}`
-        
-        comments.push({
-            id: currentIndex,
-            name: value,
-            date: commentDate
-        });
+        if(value !== ''){
+          comments.push({
+              id: currentIndex,
+              name: value,
+              date: commentDate
+          });
+        }else {
+          alert("Pusty komentarz")
+        }
         setValue('');
         setCurrentIndex(currentIndex+1)
   
